@@ -5,6 +5,7 @@ import (
 	"pokedex-go/pokemon"
 	"github.com/charmbracelet/huh"
 	"github.com/charmbracelet/lipgloss"
+	"strings"
 )
 
 func Search_pokemon(){
@@ -46,7 +47,7 @@ func Search_pokemon(){
 		Inherit(dados_pokemon_estilo).
 		Align(lipgloss.Center)
 
-	titulo := titulo_estilo.Render(fmt.Sprintf("%s\n\n", pokemon1.Nome))
+	titulo := titulo_estilo.Render(fmt.Sprintf("%s", strings.ToUpper(pokemon1.Nome)))
 	dados := dados_pokemon_estilo.Render(fmt.Sprintf("Id: %v\nPeso: %v\nAltura: %v\nTipo: %v",pokemon1.Id, pokemon1.Peso, pokemon1.Altura, tipos))
 	bloco := lipgloss.JoinVertical(lipgloss.Right, titulo, dados)
 	estilo_bloco := lipgloss.NewStyle().
