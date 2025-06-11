@@ -38,6 +38,6 @@ func Search_pokemon(){
 		Background(lipgloss.Color("#000000")).
 		Bold(true).
 		Padding(1)
-	texto := dados_pokemon.Render(fmt.Sprintf("Nome: %v\nId: %v\nPeso: %v\nAltura: %v\n", pokemon1.Nome, pokemon1.Id, pokemon1.Peso, pokemon1.Altura))
+	texto := dados_pokemon.Render(fmt.Sprintf("Nome: %v\nId: %v\nPeso: %v\nAltura: %v\nTipo: %v", pokemon1.Nome, pokemon1.Id, pokemon1.Peso, pokemon1.Altura, tipos))
 	fmt.Println(texto)
 }
