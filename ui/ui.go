@@ -33,11 +33,18 @@ func Search_pokemon(){
 		fmt.Println("Ops...", err)
 		return
 	}
-	dados_pokemon := lipgloss.NewStyle().
+	dados_pokemon_estilo := lipgloss.NewStyle().
 		Foreground(lipgloss.Color("#008000")).
 		Background(lipgloss.Color("#000000")).
 		Bold(true).
-		Padding(1)
-	texto := dados_pokemon.Render(fmt.Sprintf("Nome: %v\nId: %v\nPeso: %v\nAltura: %v\nTipo: %v", pokemon1.Nome, pokemon1.Id, pokemon1.Peso, pokemon1.Altura, tipos))
-	fmt.Println(texto)
+		Padding(1).
+		Width(24)
+
+	titulo_estilo := lipgloss.NewStyle().
+		Inherit(dados_pokemon_estilo).
+		Align(lipgloss.Center)
+
+	titulo := titulo_estilo.Render(fmt.Sprintf("%s\n\n", pokemon1.Nome))
+	dados := dados_pokemon_estilo.Render(fmt.Sprintf("Id: %v\nPeso: %v\nAltura: %v\nTipo: %v",pokemon1.Id, pokemon1.Peso, pokemon1.Altura, tipos))
+	fmt.Println(titulo+dados)
 }
