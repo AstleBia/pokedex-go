@@ -1,4 +1,4 @@
-package pokemon
+package Pokemon
 import (
 	"fmt"
 	"net/http"
