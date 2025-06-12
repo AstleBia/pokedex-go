@@ -4,5 +4,7 @@ import (
 )
 
 func main(){
-	ui.Search_pokemon()
+	for ui.Search {
+		ui.Search_pokemon()
+	}
 }
